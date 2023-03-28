@@ -23,14 +23,14 @@ public class CameraFollow : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(userTransform != null)
         {
             //화면의 X축의 최대점과 최소점을 넘지않게 설정
             float clampedX = Mathf.Clamp(userTransform.position.x, minX, maxX);
             //화면의 Y축의 최대점과 쵯도점을 넘지않게 설정
-            float clampedY = Mathf.Clamp(userTransform.rotation.y, minY, maxY);
+            float clampedY = Mathf.Clamp(userTransform.position.y, minY, maxY);
 
             //카메라를 clampedX, clampedY 방향으로 speed 속도를 부드럽게 이동
             transform.position = Vector2.Lerp(transform.position, new Vector2(clampedX, clampedY), speed);
