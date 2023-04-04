@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 352995792}
   - component: {fileID: 352995791}
   m_Layer: 0
-  m_Name: PM
+  m_Name: Potal_Mine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
