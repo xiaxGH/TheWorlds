@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour
     float axisH;
     float axisV;
     Rigidbody2D rbody;
+    public SpriteRenderer renderer;
 
     bool isActive = false;
 
@@ -39,6 +40,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
+        renderer = GetComponent<SpriteRenderer>();
         if (player != null)
         {
             if (isActive)
@@ -50,6 +52,8 @@ public class Enemy : MonoBehaviour
 
                 if (angle > -45.0f && angle <= 45.0f)
                 {
+
+                    renderer.flipX = true;
                     nowAnimation = "rightAnime";
                     if (nowAnimation == "rightAnime")
                     {
@@ -58,6 +62,7 @@ public class Enemy : MonoBehaviour
                 }
                 else
                 {
+                    renderer.flipX = false;
                     nowAnimation = "leftAnime";
                     if (nowAnimation == "leftAnime")
                     {

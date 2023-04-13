@@ -76,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0ccc508108fa6ed4fa11b4a467d7f609, type: 3}
-  m_Color: {r: 0.99923235, g: 1, b: 0.47547168, a: 1}
+  m_Sprite: {fileID: -579175612, guid: 785df36606010564a8fe853494979fa9, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -136,5 +136,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55b7100dba7a7e8478e7e59c2342b224, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputmove: {x: 0, y: 0}
   speed: 4
+  afkPlayer: PlayerMove
+  RightP: PlayerRight
+  LeftP: PlayerLeft
+  HitP: PlayerHit
+  angleZ: -90
+  renderer: {fileID: 0}
