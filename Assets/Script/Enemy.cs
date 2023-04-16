@@ -12,10 +12,10 @@ public class Enemy : MonoBehaviour
     public float reactionDistance = 4.0f;
     //애니메이션 이름
     public string idleAnime = "EnemyIdle";
-    public string rightAnime = "EnemyRight";
-    public string leftAnime = "EnemyLeft";
-    public string RhitAnime = "EnemyRhit";
-    public string LhitAnime = "EnemyLhit";
+    public string rightAnime = "EnemyRight1";
+    public string leftAnime = "EnemyLeft1";
+    public string RhitAnime = "EnemyRhit1";
+    public string LhitAnime = "EnemyLhit1";
 
     string nowAnimation = "";
     string oldAnimation = "";
@@ -34,6 +34,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         rbody = GetComponent<Rigidbody2D>();
+        GameObject WP = GameObject.FindGameObjectWithTag("Weapon");
     }
 
     // Update is called once per frame
@@ -53,7 +54,7 @@ public class Enemy : MonoBehaviour
                 if (angle > -45.0f && angle <= 45.0f)
                 {
 
-                    renderer.flipX = true;
+                    //renderer.flipX = true;
                     nowAnimation = "rightAnime";
                     if (nowAnimation == "rightAnime")
                     {
@@ -62,7 +63,7 @@ public class Enemy : MonoBehaviour
                 }
                 else
                 {
-                    renderer.flipX = false;
+                    //renderer.flipX = false;
                     nowAnimation = "leftAnime";
                     if (nowAnimation == "leftAnime")
                     {
@@ -99,6 +100,22 @@ public class Enemy : MonoBehaviour
                 oldAnimation = nowAnimation;
                 Animator animator = GetComponent<Animator>();
                 animator.Play(nowAnimation);
+            }
+        }
+    }
+
+    void OnCollisionEnter2D (Collision2D collision)
+    {
+        Debug.Log("HP가 " + hp + "남았습니다.");
+        if(collision.gameObject.tag == "Weapon")
+        {
+            hp--;
+            if(hp <= 0)
+            {
+                gameObject.SetActive(false);
+                //renderer.enabled = false;
+                //GetComponent<CircleCollider2D>().enabled = false;
+                //Destroy(gameObject, 0.5f);
             }
         }
     }

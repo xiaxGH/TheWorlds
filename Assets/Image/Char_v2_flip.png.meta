@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dd410f3bf9588174f808a16bdcef4a73
+guid: 8ca233485758c414993ce339d56567a8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -117,85 +117,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ee_0
+      name: Char_v2_flip_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
-        width: 64
-        height: 64
+        y: 33
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a197738f0dff0764fa4d15b4ed0c1ad9
-      internalID: -1939116561
+      spriteID: d0add68c54f75ce46ae9d11727762307
+      internalID: 1522908000
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ee_1
+      name: Char_v2_flip_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
-        width: 64
-        height: 64
+        x: 33
+        y: 33
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e8eef015b2d7d24584f94e9098fbe6a
-      internalID: -281912260
+      spriteID: 30b8d43002fd6b94bbce1c0732b25a88
+      internalID: 154272579
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ee_2
+      name: Char_v2_flip_2
       rect:
         serializedVersion: 2
-        x: 2
+        x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c74af7126b2180a4d9914fa388ba15ea
-      internalID: -208675989
+      spriteID: f8d5ae1130b0a7f42b2ec16cbce98455
+      internalID: -1869222399
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ee_3
+      name: Char_v2_flip_3
       rect:
         serializedVersion: 2
-        x: 64
+        x: 33
         y: 0
-        width: 64
-        height: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1cc193b926be8f04ebbb460265d0cbab
-      internalID: 381320815
+      spriteID: 6541fe9caf6767c4984b213ef79a5ccc
+      internalID: 1554611910
       vertices: []
       indices: 
       edges: []
@@ -211,10 +211,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ee_0: -1939116561
-      ee_1: -281912260
-      ee_2: -208675989
-      ee_3: 381320815
+      Char_v2_flip_0: 1522908000
+      Char_v2_flip_1: 154272579
+      Char_v2_flip_2: -1869222399
+      Char_v2_flip_3: 1554611910
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

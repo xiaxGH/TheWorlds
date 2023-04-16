@@ -24,6 +24,9 @@ public class user : MonoBehaviour
     bool isMoving = false;
     public SpriteRenderer renderer;
 
+    // 이동 방향 저장 변수
+    private int direction;
+
     void Start()
     {
         rbody = GetComponent<Rigidbody2D>();
@@ -34,38 +37,59 @@ public class user : MonoBehaviour
 
     void Update()
     {
+       
+
         if (isMoving == false)
         {
             axisH = Input.GetAxisRaw("Horizontal");
             axisV = Input.GetAxisRaw("Vertical");
+            nowAnimation = afkPlayer;
         }
+
+        if (axisH > 0) 
+        {
+            direction = 1; // 오른쪽으로 이동 중
+        } 
+        else if (axisH < 0)
+        {
+            direction = -1; // 왼쪽으로 이동 중
+        }
+
         Vector2 fromPt = transform.position;
+        Vector2 position = new Vector2(axisH, axisV) * speed;
+
         Vector2 toPt = new Vector2(fromPt.x + axisH, fromPt.y + axisV);
         angleZ = GetAngle(fromPt, toPt);
         
-        if (angleZ >= -45 && angleZ < 45)
+        if (rbody.velocity.magnitude == 0)
         {
-            nowAnimation = RightP;
+            nowAnimation = afkPlayer;
             //renderer.sprite = char_1;
-            renderer.flipX = false;
+            //renderer.flipX = false;
 
         }
-        else
+        else if(rbody.velocity.magnitude > 0)
         { 
-            nowAnimation = LeftP;
-            renderer.flipX = true;
+            if(direction == 1){
+                nowAnimation = RightP;
+            }
+            else{
+                nowAnimation = LeftP;
+            }
 
         }
         if (nowAnimation != oldAnimation)
-        { 
+        {
             oldAnimation = nowAnimation;
             GetComponent<Animator>().Play(nowAnimation);
         }
+
     }
 
     void FixedUpdate()
     {
         rbody.velocity = new Vector2(axisH, axisV) * speed;
+        
     }
     public void SetAxis(float h, float v)
     {
