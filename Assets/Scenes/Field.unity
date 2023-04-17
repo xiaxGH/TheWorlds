@@ -1064,7 +1064,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.39
+  m_Radius: 0.07
 --- !u!212 &352995793
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1106,7 +1106,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 1989397994, guid: 0f6850d1488a17d41b41bc8713c5da5a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 34c4d8fadf288d349b5c96c19f8ea4d0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1126,7 +1126,7 @@ Transform:
   m_GameObject: {fileID: 352995790}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.62, y: -1.34, z: 0}
-  m_LocalScale: {x: 0.6534, y: 0.685064, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1896544597}
@@ -1274,7 +1274,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.13}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1285,7 +1285,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.48, y: 0.61}
   m_EdgeRadius: 0
 --- !u!212 &798953758
 SpriteRenderer:
@@ -2238,6 +2238,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8264738156636356595, guid: c4974f936fc0190438ef1834a6cb91b4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264738156636356595, guid: c4974f936fc0190438ef1834a6cb91b4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264738156636356595, guid: c4974f936fc0190438ef1834a6cb91b4, type: 3}
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
@@ -2368,7 +2376,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8685132374310189239, guid: 23e957b958eb02b47a3dcea74096ae3b, type: 3}
       propertyPath: orthographic size
-      value: 2.02
+      value: 2.26
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e957b958eb02b47a3dcea74096ae3b, type: 3}
