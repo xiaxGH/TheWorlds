@@ -1,27 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class user : MonoBehaviour
 {
-    //public Vector2 inputmove;
+    // 유저의 이동속도
     public float speed = 3.0f;
 
-    public string afkPlayer = "PlayerMove";
-    public string RightP = "PlayerRight";
-    public string LeftP = "PlayerLeft";
-    public string HitP = "PlayerHit";
+    // 유저의 HP
+    public int hp = 3;
 
+    // 애니메이션 클립 이름
+    public string afkPlayer = "PlayerMove"; // 플레이어가 멈춰 있을 때 애니메이션 클립의 이름
+    public string RightP = "PlayerRight";   // 플레이어가 오른쪽으로 이동중일 때 애니메이션 클립의 이름
+    public string LeftP = "PlayerLeft";     // 플레이어가 왼쪽으로 이동중일 때 애니메이션 클립의 이름
+    public string HitP = "PlayerHit";       // 플레이어가 몬스터한테 피격 당했을 때 애니메이션 클립의 이름
+
+    // 변수로 쓸 애니메이션
     string nowAnimation = "";
     string oldAnimation = "";
     string HitAnimation = "";
 
     float axisH;
     float axisV;
-    public float angleZ = -90.0f;
 
     Rigidbody2D rbody;
     bool isMoving = false;
+
     public SpriteRenderer renderer;
 
     // 이동 방향 저장 변수
@@ -29,6 +35,7 @@ public class user : MonoBehaviour
 
     void Start()
     {
+        // User오브젝트에서 제어할 컴포넌트 객체 할당
         rbody = GetComponent<Rigidbody2D>();
         oldAnimation = afkPlayer;
         renderer = GetComponent<SpriteRenderer>();
@@ -38,7 +45,7 @@ public class user : MonoBehaviour
     void Update()
     {
        
-
+        //User 오브젝트 이동시 좌표값
         if (isMoving == false)
         {
             axisH = Input.GetAxisRaw("Horizontal");
@@ -54,30 +61,28 @@ public class user : MonoBehaviour
         {
             direction = -1; // 왼쪽으로 이동 중
         }
-
-        Vector2 fromPt = transform.position;
-        Vector2 position = new Vector2(axisH, axisV) * speed;
-
-        Vector2 toPt = new Vector2(fromPt.x + axisH, fromPt.y + axisV);
-        angleZ = GetAngle(fromPt, toPt);
         
+        // User 오브젝트가 이동중이지 않을 때 애니메이션 변경
         if (rbody.velocity.magnitude == 0)
         {
             nowAnimation = afkPlayer;
-            //renderer.sprite = char_1;
-            //renderer.flipX = false;
-
         }
+        // User 오브젝트가 이동 중 일 때 애니메이션 변경
         else if(rbody.velocity.magnitude > 0)
         { 
-            if(direction == 1){
+            if(direction == 1)
+            {
+                // 오른쪽으로 이동 시 현재 애니메이션에 저장
                 nowAnimation = RightP;
             }
-            else{
+            else
+            {
+                // 왼쪽으로 이동 시 현재 애니메이션에 저장
                 nowAnimation = LeftP;
             }
 
         }
+        // 현재 애니메이션을 출력
         if (nowAnimation != oldAnimation)
         {
             oldAnimation = nowAnimation;
@@ -85,42 +90,25 @@ public class user : MonoBehaviour
         }
 
     }
-
+   
     void FixedUpdate()
     {
+        // User 오브젝트의 이동 코드
         rbody.velocity = new Vector2(axisH, axisV) * speed;
         
     }
-    public void SetAxis(float h, float v)
+
+    // User의 체력이 없으면 Field Scene으로 이동
+    void OnCollisionEnter2D(Collision2D o)
     {
-        axisH = h;
-        axisV = v;
-        if (axisH == 0 && axisV == 0)
+        if(o.gameObject.tag == "Enemy")
         {
-            isMoving = false;
+            hp--;
+            if(hp <= 0)
+            {
+                SceneManager.LoadScene(0);
+            }
         }
-        else
-        {
-            isMoving = true;
-        }
-    }
-
-    float GetAngle(Vector2 p1, Vector2 p2)
-    {
-        float angle;
-        if (axisH != 0 || axisV != 0)
-        {
-            float dx = p2.x - p1.x;
-            float dy = p2.y - p1.y;
-
-            float rad = Mathf.Atan2(dy, dx);
-
-            angle = rad * Mathf.Rad2Deg;
-        }
-        else
-        {
-            angle = angleZ;
-        }
-        return angle;
     }
 }
+    
