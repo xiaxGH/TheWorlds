@@ -98,12 +98,13 @@ public class user : MonoBehaviour
         
     }
 
-    // User의 체력이 없으면 Field Scene으로 이동
+    // 적과 충돌했을 때 실행되는 이벤트
     void OnCollisionEnter2D(Collision2D o)
     {
         if(o.gameObject.tag == "Enemy")
         {
             hp--;
+            // 설정해둔 User 오브젝트의 hp가 0일때 Field Scene으로 이동
             if(hp <= 0)
             {
                 SceneManager.LoadScene(0);

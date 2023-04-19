@@ -15,15 +15,16 @@ public class Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //스페이스바가 입력 됐을 때 실행되는 코드
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            GetComponent<CapsuleCollider2D>().enabled = true;
+            GetComponent<CapsuleCollider2D>().enabled = true;   // Collider 컴포넌트 활성화
             renderer.flipY = true;
         }
+        // 스페이스바의 입력이 해제 됐을 때 실행되는 코드
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            GetComponent<CapsuleCollider2D>().enabled = false;
+            GetComponent<CapsuleCollider2D>().enabled = false;  // Collider 컴포넌트 비활성화
             renderer.flipY = false;
         }
     }
