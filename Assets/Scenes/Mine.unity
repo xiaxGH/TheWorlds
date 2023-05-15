@@ -221,9 +221,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.35, y: 0}
   serializedVersion: 2
-  m_Radius: 0.12
+  m_Radius: 1.09
 --- !u!212 &61644698
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -543,7 +543,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &237290097
 MonoBehaviour:
@@ -890,9 +890,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3750789603657595311, guid: 541e8e21f9d1a644a9df9f510d218b7e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3750789603994487468, guid: 541e8e21f9d1a644a9df9f510d218b7e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 3750789603994487469, guid: 541e8e21f9d1a644a9df9f510d218b7e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3750789603994487470, guid: 541e8e21f9d1a644a9df9f510d218b7e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3750789604926166040, guid: 541e8e21f9d1a644a9df9f510d218b7e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -3038,7 +3050,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3659938323615923019, guid: 25a572059af8ad84dada679c768b791b, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3659938323615923019, guid: 25a572059af8ad84dada679c768b791b, type: 3}
       propertyPath: m_Offset.x

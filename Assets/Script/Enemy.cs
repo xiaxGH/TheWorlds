@@ -56,7 +56,7 @@ public class Enemy : MonoBehaviour
                 float angle = rad * Mathf.Rad2Deg;
 
                 //각도에 따른 애니메이션 클립 설정 (오른쪽)
-                if (angle > -45.0f && angle <= 45.0f)
+                if (player.transform.position.x < transform.position.x)//(angle > -45.0f && angle <= 45.0f)
                 {
 
                     //renderer.flipX = true;
@@ -68,7 +68,7 @@ public class Enemy : MonoBehaviour
                     }
                 }
                 //각도에 따른 애니메이션 클립 설정 (왼쪽)
-                else
+                else if(player.transform.position.x > transform.position.x)
                 {
                     nowAnimation = "leftAnime";
                     if (nowAnimation == "leftAnime")
@@ -110,8 +110,9 @@ public class Enemy : MonoBehaviour
             if(nowAnimation != oldAnimation)
             {
                 oldAnimation = nowAnimation;
-                Animator animator = GetComponent<Animator>();
-                animator.Play(nowAnimation);
+                //Animator animator = GetComponent<Animator>();
+                //animator.Play(nowAnimation);
+                GetComponent<Animator>().Play(nowAnimation);
             }
         }
     }
