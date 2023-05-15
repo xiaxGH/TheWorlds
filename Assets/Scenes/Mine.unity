@@ -391,7 +391,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.12
+  m_Radius: 1.2
 --- !u!212 &144218783
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -997,6 +997,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &427535805 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4645613730405477658, guid: 25a572059af8ad84dada679c768b791b, type: 3}
+  m_PrefabInstance: {fileID: 3659938324822797275}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &865797035
 GameObject:
   m_ObjectHideFlags: 0
@@ -1264,9 +1269,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.09, y: 0}
   serializedVersion: 2
-  m_Radius: 0.12
+  m_Radius: 1.2
 --- !u!212 &883984830
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1553,7 +1558,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.12
+  m_Radius: 1.2
 --- !u!212 &1065615720
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3193,6 +3198,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1801060123979387577, guid: 25a572059af8ad84dada679c768b791b, type: 3}
+      propertyPath: hp
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -1801060123979387577, guid: 25a572059af8ad84dada679c768b791b, type: 3}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3659938323615923017, guid: 25a572059af8ad84dada679c768b791b, type: 3}
       propertyPath: m_BodyType
       value: 1
@@ -3303,7 +3316,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4645613730405477671, guid: 25a572059af8ad84dada679c768b791b, type: 3}
       propertyPath: hp
-      value: 6
+      value: 6000
       objectReference: {fileID: 0}
     - target: {fileID: 4645613730405477671, guid: 25a572059af8ad84dada679c768b791b, type: 3}
       propertyPath: speed
@@ -3311,10 +3324,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4645613730405477671, guid: 25a572059af8ad84dada679c768b791b, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: -7849839316183574483, guid: 25a572059af8ad84dada679c768b791b, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25a572059af8ad84dada679c768b791b, type: 3}
 --- !u!1001 &4091185496827388194
 PrefabInstance:
@@ -3382,6 +3394,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4645613730405477657, guid: 25a572059af8ad84dada679c768b791b, type: 3}
   m_PrefabInstance: {fileID: 3659938324822797275}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8264738157687752392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427535805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c15f9744779d9143a7d063f35aadbd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  hp: 6666
+  afkPlayer: PlayerMove
+  afkPlayerL: PlayerMoveL
+  RightP: PlayerRight
+  LeftP: PlayerLeft
+  HitP: PlayerHit
+  HitPL: PlayerHitL
+  renderer: {fileID: 0}
 --- !u!1001 &9152744165791558024
 PrefabInstance:
   m_ObjectHideFlags: 0

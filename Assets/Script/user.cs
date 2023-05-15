@@ -120,7 +120,13 @@ public class user : MonoBehaviour
             {
                 nowAnimation = HitPL;
             }
+            if (nowAnimation != oldAnimation)
+            {
 
+                oldAnimation = nowAnimation;
+                GetComponent<Animator>().Play(nowAnimation);
+
+            }
 
             // 설정해둔 User 오브젝트의 hp가 0일때 Field Scene으로 이동
             if (hp <= 0)

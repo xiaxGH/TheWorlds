@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8264738156636356593}
   - component: {fileID: 8264738156636356556}
   - component: {fileID: 8264738156636356557}
-  - component: {fileID: 4575467921888963316}
   - component: {fileID: -4164594801522380762}
   m_Layer: 0
   m_Name: user
@@ -145,26 +144,7 @@ MonoBehaviour:
   RightP: PlayerRight
   LeftP: PlayerLeft
   HitP: PlayerHit
-  renderer: {fileID: 0}
---- !u!114 &4575467921888963316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8264738156636356592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5a1f1ec815a0214aac9bb9ce2d15e10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  hp: 3
-  afkPlayer: PlayerMove
-  afkPlayerL: PlayerMoveL
-  RightP: PlayerRight
-  LeftP: PlayerLeft
-  HitP: PlayerHit
+  HitPL: PlayerHitL
   renderer: {fileID: 0}
 --- !u!95 &-4164594801522380762
 Animator:

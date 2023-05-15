@@ -1245,6 +1245,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1801060123979387577, guid: 25a572059af8ad84dada679c768b791b, type: 3}
+      propertyPath: hp
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -1801060123979387577, guid: 25a572059af8ad84dada679c768b791b, type: 3}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3659938323615923028, guid: 25a572059af8ad84dada679c768b791b, type: 3}
       propertyPath: m_SortingOrder
       value: 7
@@ -1303,7 +1311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4645613730405477671, guid: 25a572059af8ad84dada679c768b791b, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -7849839316183574483, guid: 25a572059af8ad84dada679c768b791b, type: 3}
