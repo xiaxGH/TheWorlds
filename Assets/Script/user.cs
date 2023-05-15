@@ -12,10 +12,12 @@ public class user : MonoBehaviour
     public int hp = 3;
 
     // 애니메이션 클립 이름
-    public string afkPlayer = "PlayerMove"; // 플레이어가 멈춰 있을 때 애니메이션 클립의 이름
-    public string RightP = "PlayerRight";   // 플레이어가 오른쪽으로 이동중일 때 애니메이션 클립의 이름
-    public string LeftP = "PlayerLeft";     // 플레이어가 왼쪽으로 이동중일 때 애니메이션 클립의 이름
-    public string HitP = "PlayerHit";       // 플레이어가 몬스터한테 피격 당했을 때 애니메이션 클립의 이름
+    public string afkPlayer = "PlayerMove";    // 플레이어가 멈춰 있을 때 애니메이션 클립의 이름
+    public string afkPlayerL = "PlayerMoveL";  // 플레이어가 왼쪽으로 이동하다가 멈춰 있을 때 애니메이션 클립의 이름 
+    public string RightP = "PlayerRight";      // 플레이어가 오른쪽으로 이동중일 때 애니메이션 클립의 이름
+    public string LeftP = "PlayerLeft";        // 플레이어가 왼쪽으로 이동중일 때 애니메이션 클립의 이름
+    public string HitP = "PlayerHit";          // 플레이어가 몬스터한테 피격 당했을 때 애니메이션 클립의 이름
+    public string HitPL = "PlayerHitL";         // 플레이어가 몬스터한테 왼쪽에서 피격 당했을 때 애니메이션 클립의 이름
 
     // 변수로 쓸 애니메이션
     string nowAnimation = "";
@@ -33,6 +35,7 @@ public class user : MonoBehaviour
     // 이동 방향 저장 변수
     private int direction;
 
+
     void Start()
     {
         // User오브젝트에서 제어할 컴포넌트 객체 할당
@@ -41,11 +44,9 @@ public class user : MonoBehaviour
         renderer = GetComponent<SpriteRenderer>();
     }
 
-
     void Update()
     {
-       
-        //User 오브젝트 이동시 좌표값
+        // User 오브젝트 이동시 좌표값
         if (isMoving == false)
         {
             axisH = Input.GetAxisRaw("Horizontal");
@@ -53,24 +54,31 @@ public class user : MonoBehaviour
             nowAnimation = afkPlayer;
         }
 
-        if (axisH > 0) 
+        if (axisH > 0)
         {
             direction = 1; // 오른쪽으로 이동 중
-        } 
+        }
         else if (axisH < 0)
         {
             direction = -1; // 왼쪽으로 이동 중
         }
-        
+
         // User 오브젝트가 이동중이지 않을 때 애니메이션 변경
         if (rbody.velocity.magnitude == 0)
         {
-            nowAnimation = afkPlayer;
+            if (direction == 1)
+            {
+                nowAnimation = afkPlayer;
+            }
+            else if (direction == -1)
+            {
+                nowAnimation = afkPlayerL;
+            }
         }
         // User 오브젝트가 이동 중 일 때 애니메이션 변경
-        else if(rbody.velocity.magnitude > 0)
-        { 
-            if(direction == 1)
+        else if (rbody.velocity.magnitude > 0)
+        {
+            if (direction == 1)
             {
                 // 오른쪽으로 이동 시 현재 애니메이션에 저장
                 nowAnimation = RightP;
@@ -90,26 +98,37 @@ public class user : MonoBehaviour
         }
 
     }
-   
+
     void FixedUpdate()
     {
         // User 오브젝트의 이동 코드
         rbody.velocity = new Vector2(axisH, axisV) * speed;
-        
+
     }
 
     // 적과 충돌했을 때 실행되는 이벤트
     void OnCollisionEnter2D(Collision2D o)
     {
-        if(o.gameObject.tag == "Enemy")
+        if (o.gameObject.tag == "Enemy")
         {
             hp--;
+            if(direction == 1)
+            {
+                nowAnimation = HitP;
+            }
+            else
+            {
+                nowAnimation = HitPL;
+            }
+
+
             // 설정해둔 User 오브젝트의 hp가 0일때 Field Scene으로 이동
-            if(hp <= 0)
+            if (hp <= 0)
             {
                 SceneManager.LoadScene(0);
             }
         }
     }
+
+
 }
-    

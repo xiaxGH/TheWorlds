@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4645613730405477659}
   - component: {fileID: 4645613730405477670}
   - component: {fileID: 4645613730405477671}
+  - component: {fileID: -7849839316183574483}
   - component: {fileID: 3659938324135585297}
   m_Layer: 6
   m_Name: user
@@ -133,7 +134,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4645613730405477658}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55b7100dba7a7e8478e7e59c2342b224, type: 3}
   m_Name: 
@@ -141,10 +142,31 @@ MonoBehaviour:
   speed: 4
   hp: 3
   afkPlayer: PlayerMove
+  afkPlayerL: PlayerMoveL
   RightP: PlayerRight
   LeftP: PlayerLeft
   HitP: PlayerHit
   renderer: {fileID: 4645613730405477656}
+--- !u!114 &-7849839316183574483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4645613730405477658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5a1f1ec815a0214aac9bb9ce2d15e10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
+  hp: 3
+  afkPlayer: PlayerMove
+  afkPlayerL: PlayerMoveL
+  RightP: PlayerRight
+  LeftP: PlayerLeft
+  HitP: PlayerHit
+  renderer: {fileID: 0}
 --- !u!95 &3659938324135585297
 Animator:
   serializedVersion: 5
