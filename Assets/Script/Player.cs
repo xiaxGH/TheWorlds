@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class Player : MonoBehaviour
 
     // 유저의 HP
     public int hp = 6;
+    public int currentHealth;
+    public Image healthUI;
 
     // 애니메이션 클립 이름
     public string afkPlayer = "PlayerMove";    // 플레이어가 멈춰 있을 때 애니메이션 클립의 이름
@@ -42,6 +45,7 @@ public class Player : MonoBehaviour
         rbody = GetComponent<Rigidbody2D>();
         oldAnimation = afkPlayer;
         renderer = GetComponent<SpriteRenderer>();
+        currentHealth = hp;
     }
 
     void Update()
@@ -127,6 +131,26 @@ public class Player : MonoBehaviour
                 SceneManager.LoadScene(0);
             }
         }
+    }
+    public void TakeDamage(int damageAmount)
+    {
+        currentHealth -= damageAmount;
+        // 체력 변경 시 체력 UI 업데이트
+        UpdateHealthUI();
+    }
+    private void UpdateHealthUI()
+    {
+        // 체력 UI 이미지 변경
+        healthUI.sprite = GetHealthSprite();
+    }
+    private Sprite GetHealthSprite()
+    {
+        // 현재 체력에 따라 체력 UI 이미지 반환
+        // 예시로 체력이 1일 때는 첫 번째 이미지, 2일 때는 두 번째 이미지 등을 반환하도록 설정
+        // 실제 게임에서는 적절한 체력 이미지를 반환하도록 구현해야 합니다.
+        // 스프라이트 이름이 "Health1", "Health2" 등으로 되어 있다고 가정합니다.
+        string spriteName = "Health" + currentHealth;
+        return Resources.Load<Sprite>(spriteName);
     }
 
 
