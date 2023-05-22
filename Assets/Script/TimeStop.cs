@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TImeStop : MonoBehaviour
+public class TimeStop : MonoBehaviour
 {
     private bool isPaused = false;
 
