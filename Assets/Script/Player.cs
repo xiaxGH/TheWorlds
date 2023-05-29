@@ -106,6 +106,10 @@ public class Player : MonoBehaviour
     // 적과 충돌했을 때 실행되는 이벤트
     void OnCollisionEnter2D(Collision2D o)
     {
+        if(o.gameObject.CompareTag("Enemy"))
+        {
+            SceneManager.LoadScene(3);
+        }
         if (o.gameObject.tag == "Enemy")
         {
             hp--;

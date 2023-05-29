@@ -20,5 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Boss.unity
     guid: 2c24715981a6e5f4299b36318276772f
+  - enabled: 1
+    path: Assets/Scenes/BossPattern.unity
+    guid: ad1cbc6172ebf994abee9edff9e8ecb3
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: d74efb9377c96204ba4cf32aeeeaa6d8, type: 2}
