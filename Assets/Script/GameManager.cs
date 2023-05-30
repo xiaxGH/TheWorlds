@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("플레이어 HP : " + player.hp);
+        //Debug.Log("플레이어 HP : " + player.hp);
         if(player.hp == 5){
             //Sprite newSprite = Resources.Load<Sprite>(hp5); // 리소스에서 스프라이트 로드
             if (ph.sprite != null)

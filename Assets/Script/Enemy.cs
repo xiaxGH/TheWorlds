@@ -120,7 +120,7 @@ public class Enemy : MonoBehaviour
     // Enemy 오브젝트의 충돌 이벤트
     void OnCollisionEnter2D (Collision2D collision)
     {
-        Debug.Log("HP가 " + hp + "남았습니다.");
+        Debug.Log("HP가 " + hp + "남았습니다. (Enemy.CS)");
         // Weapon 태그를 가지고 있는 오브젝트와 충돌시 Enemy 오브젝트의 hp 감소
         if(collision.gameObject.tag == "Weapon")
         {
