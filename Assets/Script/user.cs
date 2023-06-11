@@ -131,7 +131,7 @@ public class user : MonoBehaviour
             // 설정해둔 User 오브젝트의 hp가 0일때 Field Scene으로 이동
             if (hp <= 0)
             {
-                SceneManager.LoadScene(0);
+                //SceneManager.LoadScene(0);
             }
         }
     }

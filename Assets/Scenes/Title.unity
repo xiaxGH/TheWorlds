@@ -286,7 +286,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 986713361}
         m_TargetAssemblyTypeName: ScenesChange, Assembly-CSharp
-        m_MethodName: next
+        m_MethodName: ScenesChanges
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -295,7 +295,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &546707066
 MonoBehaviour:
   m_ObjectHideFlags: 0

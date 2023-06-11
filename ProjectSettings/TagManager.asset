@@ -9,6 +9,7 @@ TagManager:
   - Popup
   - Potal
   - Boss
+  - Object
   layers:
   - Default
   - TransparentFX

@@ -1,21 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class ScenesChange : MonoBehaviour
+public class asd : MonoBehaviour
 {
+    public GameObject PlayerObject;
     // Start is called before the first frame update
     void Start()
     {
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    public void ScenesChanges(){
-        SceneManager.LoadScene(0);
+        if(PlayerObject.activeSelf){
+            gameObject.SetActive(true);
+        }
     }
 }
