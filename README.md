@@ -1,5 +1,5 @@
 # TheWorlds
-2D 탑뷰 RPG 게임
+2D 탑뷰 RPG 게임 2인 프로젝트
 # Assest
 ### 캐릭터
 ![Char_v3](https://github.com/BaekYoungHoon/TheWorlds/assets/81205011/aaa00097-0546-4fd5-846c-054ce3a2a718)
