@@ -10,6 +10,9 @@ public class Attack : MonoBehaviour
     private Vector3 lastPosition;
     Collider2D Weapons;
 
+    public GameObject childMotion1;
+    public GameObject childMotion2;
+
     private bool isRight = true;
 
     public string SwordAtk = "sword";
@@ -23,6 +26,9 @@ public class Attack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //childMotion1 = parentTransform.Find("AttackEffect_R");
+        //childMotion2 = parentTransform.Find("AttackEffect_L");
+
         lastPosition = transform.position;
         parentTransform = transform.parent.transform;
         renderer = GetComponent<SpriteRenderer>();
@@ -70,10 +76,12 @@ public class Attack : MonoBehaviour
             if (isRight)
             {
                 nowAnimation = SwordAtk;
+                childMotion1.SetActive(true);
             }
             else
             {
                 nowAnimation = SwordAtkL;
+                childMotion2.SetActive(true);
             }
 
             if (nowAnimation != oldAnimation)
@@ -86,11 +94,16 @@ public class Attack : MonoBehaviour
                 GetComponent<Animator>().Play(nowAnimation, -1, 0f); // 애니메이션을 강제로 처음부터 재생
             }
         }
+        if(childMotion1.activeSelf || childMotion2.activeSelf)
+        {
+            // 0.1초 후에 현재 게임 오브젝트를 비활성화
+            Invoke("DeactivateObject", 0.2f);
+        }
     }
-
-    void LateUpdate()
+    // 비활성화할 메서드
+    private void DeactivateObject()
     {
-        // 부모 오브젝트의 위치를 따라가도록 자식 오브젝트의 위치를 업데이트합니다.
-        // transform.position = parentTransform.position;
+        childMotion1.SetActive(false);
+        childMotion2.SetActive(false);
     }
 }

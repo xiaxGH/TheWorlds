@@ -103,6 +103,7 @@ public class user : MonoBehaviour
     {
         // User 오브젝트의 이동 코드
         rbody.velocity = new Vector2(axisH, axisV) * speed;
+        Debug.Log("X : " + axisH + "        Y : " + axisV);
 
     }
 
